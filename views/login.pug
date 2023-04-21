@@ -5,16 +5,17 @@ block content
         each message in flash_errors
             div(class="alert alert-danger")
                 p= message
+    if flash_success
+        each message in flash_success
+            div(class="alert alert-success")
+                p= message
     .ui.middle.aligned.center.aligned.grid
         .six.wide.column
-            form.ui.large.form(method="post", action="/")
+            form.ui.large.form(method="post", action="/login")
                 .ui.stacked.segment
-                    +field('text', 'firstName', 'First name', register.firstName)
-                    +field('text', 'lastName', 'Last name', register.lastName)
                     +field('email', 'email', 'your.email@address.tld', register.email)
                     +field('password', 'password', 'Password')
-                    +field('password', 'password_confirm', 'Confirm password')
-                    button(type="submit").ui.fluid.large.teal.submit.button Register
+                    button(type="submit").ui.fluid.large.teal.submit.button Login
 
                 .ui.error.message
 

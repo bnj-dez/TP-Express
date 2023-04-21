@@ -1,0 +1,10 @@
+extends layouts/frontend
+
+block content
+    if flash_success
+        each message in flash_success
+            div(class="alert alert-success")
+                p= message
+    div
+        .middle.aligned.center
+        p Bienvenue sur votre dashboard #{firstName} #{lastName}
